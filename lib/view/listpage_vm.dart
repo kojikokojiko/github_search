@@ -2,18 +2,20 @@
 import 'package:github_search/repository/repository.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../model/repository_entity.dart';
 
 
 
 
 
-final repositoryListViewModelProvider = StateNotifierProvider.autoDispose(
+
+final repositoryListViewModelProvider = StateNotifierProvider.autoDispose<RepositoryListViewModel, AsyncValue<List<RepositoryEntity>>>(
       (ref) => RepositoryListViewModel(ref.read(githubRepositoryProvider)),
 );
 
-class RepositoryListViewModel extends StateNotifier{
+class RepositoryListViewModel extends StateNotifier<AsyncValue<List<RepositoryEntity>>> {
   RepositoryListViewModel(this._repo,):super(const AsyncValue.loading()){
-    // searchRepositories("");
+    searchRepositories("flutter");
   }
 
   final GithubRepository _repo;
