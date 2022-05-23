@@ -19,7 +19,7 @@ class GithubRepository{
       repositoryList.add(RepositoryEntity.fromJson(itemJson as Map<String ,dynamic>));
     }
     return repositoryList;
-    
+
 
   }
 
