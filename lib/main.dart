@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:find_directory/view/list_page.dart';
+import 'package:github_search/view/listpage.dart';
 
-import 'listpage.dart';
+import 'view/listpage.dart';
 void main() {
   runApp(const MyApp());
 }
