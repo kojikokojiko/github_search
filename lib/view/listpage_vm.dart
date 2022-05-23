@@ -15,7 +15,7 @@ final repositoryListViewModelProvider = StateNotifierProvider.autoDispose<Reposi
 
 class RepositoryListViewModel extends StateNotifier<AsyncValue<List<RepositoryEntity>>> {
   RepositoryListViewModel(this._repo,):super(const AsyncValue.loading()){
-    searchRepositories("flutter");
+    searchRepositories("github");
   }
 
   final GithubRepository _repo;
