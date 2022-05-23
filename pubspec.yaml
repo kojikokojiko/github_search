@@ -39,6 +39,7 @@ dependencies:
   flutter_riverpod:
   http:
   hooks_riverpod:
+  fluttertoast:
 
 dev_dependencies:
   flutter_test:
