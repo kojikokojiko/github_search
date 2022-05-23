@@ -1,8 +1,12 @@
 import 'dart:convert';
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:github_search/service/api_client.dart';
 
 import 'package:github_search/model/repository_entity.dart';
+
+
+final githubRepositoryProvider = Provider((ref) => GithubRepository(ref.read(apiClientProvider)));
 
 class GithubRepository{
   GithubRepository(this._apiClient);
