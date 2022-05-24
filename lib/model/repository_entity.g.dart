@@ -10,6 +10,7 @@ _$_RepositoryEntity _$$_RepositoryEntityFromJson(Map<String, dynamic> json) =>
     _$_RepositoryEntity(
       name: json['name'] as String?,
       fullName: json['full_name'] as String?,
+      language: json['language'] as String?,
       owner: json['owner'] == null
           ? null
           : RepositoryOwnerEntity.fromJson(
@@ -24,6 +25,7 @@ Map<String, dynamic> _$$_RepositoryEntityToJson(_$_RepositoryEntity instance) =>
     <String, dynamic>{
       'name': instance.name,
       'full_name': instance.fullName,
+      'language': instance.language,
       'owner': instance.owner,
       'stargazers_count': instance.stargazersCount,
       'watchers_count': instance.watchersCount,

@@ -10,6 +10,7 @@ abstract class RepositoryEntity with _$RepositoryEntity {
   const factory RepositoryEntity({
     @JsonKey(name: 'name') String? name,
     @JsonKey(name: 'full_name') String? fullName,
+    @JsonKey(name: 'language') String? language,
     @JsonKey(name: 'owner') RepositoryOwnerEntity? owner,
     @JsonKey(name: 'stargazers_count') int? stargazersCount,
     @JsonKey(name: 'watchers_count') int? watchersCount,

@@ -24,6 +24,8 @@ mixin _$RepositoryEntity {
   String? get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'full_name')
   String? get fullName => throw _privateConstructorUsedError;
+  @JsonKey(name: 'language')
+  String? get language => throw _privateConstructorUsedError;
   @JsonKey(name: 'owner')
   RepositoryOwnerEntity? get owner => throw _privateConstructorUsedError;
   @JsonKey(name: 'stargazers_count')
@@ -49,6 +51,7 @@ abstract class $RepositoryEntityCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'name') String? name,
       @JsonKey(name: 'full_name') String? fullName,
+      @JsonKey(name: 'language') String? language,
       @JsonKey(name: 'owner') RepositoryOwnerEntity? owner,
       @JsonKey(name: 'stargazers_count') int? stargazersCount,
       @JsonKey(name: 'watchers_count') int? watchersCount,
@@ -71,6 +74,7 @@ class _$RepositoryEntityCopyWithImpl<$Res>
   $Res call({
     Object? name = freezed,
     Object? fullName = freezed,
+    Object? language = freezed,
     Object? owner = freezed,
     Object? stargazersCount = freezed,
     Object? watchersCount = freezed,
@@ -85,6 +89,10 @@ class _$RepositoryEntityCopyWithImpl<$Res>
       fullName: fullName == freezed
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      language: language == freezed
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
               as String?,
       owner: owner == freezed
           ? _value.owner
@@ -131,6 +139,7 @@ abstract class _$$_RepositoryEntityCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'name') String? name,
       @JsonKey(name: 'full_name') String? fullName,
+      @JsonKey(name: 'language') String? language,
       @JsonKey(name: 'owner') RepositoryOwnerEntity? owner,
       @JsonKey(name: 'stargazers_count') int? stargazersCount,
       @JsonKey(name: 'watchers_count') int? watchersCount,
@@ -156,6 +165,7 @@ class __$$_RepositoryEntityCopyWithImpl<$Res>
   $Res call({
     Object? name = freezed,
     Object? fullName = freezed,
+    Object? language = freezed,
     Object? owner = freezed,
     Object? stargazersCount = freezed,
     Object? watchersCount = freezed,
@@ -170,6 +180,10 @@ class __$$_RepositoryEntityCopyWithImpl<$Res>
       fullName: fullName == freezed
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      language: language == freezed
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
               as String?,
       owner: owner == freezed
           ? _value.owner
@@ -203,6 +217,7 @@ class _$_RepositoryEntity
   const _$_RepositoryEntity(
       {@JsonKey(name: 'name') this.name,
       @JsonKey(name: 'full_name') this.fullName,
+      @JsonKey(name: 'language') this.language,
       @JsonKey(name: 'owner') this.owner,
       @JsonKey(name: 'stargazers_count') this.stargazersCount,
       @JsonKey(name: 'watchers_count') this.watchersCount,
@@ -218,6 +233,9 @@ class _$_RepositoryEntity
   @override
   @JsonKey(name: 'full_name')
   final String? fullName;
+  @override
+  @JsonKey(name: 'language')
+  final String? language;
   @override
   @JsonKey(name: 'owner')
   final RepositoryOwnerEntity? owner;
@@ -236,7 +254,7 @@ class _$_RepositoryEntity
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RepositoryEntity(name: $name, fullName: $fullName, owner: $owner, stargazersCount: $stargazersCount, watchersCount: $watchersCount, forksCount: $forksCount, openIssuesCount: $openIssuesCount)';
+    return 'RepositoryEntity(name: $name, fullName: $fullName, language: $language, owner: $owner, stargazersCount: $stargazersCount, watchersCount: $watchersCount, forksCount: $forksCount, openIssuesCount: $openIssuesCount)';
   }
 
   @override
@@ -246,6 +264,7 @@ class _$_RepositoryEntity
       ..add(DiagnosticsProperty('type', 'RepositoryEntity'))
       ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('fullName', fullName))
+      ..add(DiagnosticsProperty('language', language))
       ..add(DiagnosticsProperty('owner', owner))
       ..add(DiagnosticsProperty('stargazersCount', stargazersCount))
       ..add(DiagnosticsProperty('watchersCount', watchersCount))
@@ -260,6 +279,7 @@ class _$_RepositoryEntity
             other is _$_RepositoryEntity &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.fullName, fullName) &&
+            const DeepCollectionEquality().equals(other.language, language) &&
             const DeepCollectionEquality().equals(other.owner, owner) &&
             const DeepCollectionEquality()
                 .equals(other.stargazersCount, stargazersCount) &&
@@ -277,6 +297,7 @@ class _$_RepositoryEntity
       runtimeType,
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(fullName),
+      const DeepCollectionEquality().hash(language),
       const DeepCollectionEquality().hash(owner),
       const DeepCollectionEquality().hash(stargazersCount),
       const DeepCollectionEquality().hash(watchersCount),
@@ -298,6 +319,7 @@ abstract class _RepositoryEntity implements RepositoryEntity {
   const factory _RepositoryEntity(
           {@JsonKey(name: 'name') final String? name,
           @JsonKey(name: 'full_name') final String? fullName,
+          @JsonKey(name: 'language') final String? language,
           @JsonKey(name: 'owner') final RepositoryOwnerEntity? owner,
           @JsonKey(name: 'stargazers_count') final int? stargazersCount,
           @JsonKey(name: 'watchers_count') final int? watchersCount,
@@ -314,6 +336,9 @@ abstract class _RepositoryEntity implements RepositoryEntity {
   @override
   @JsonKey(name: 'full_name')
   String? get fullName => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(name: 'language')
+  String? get language => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'owner')
   RepositoryOwnerEntity? get owner => throw _privateConstructorUsedError;
