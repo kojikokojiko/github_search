@@ -39,7 +39,7 @@ class ListPage extends HookConsumerWidget {
         title: Text(
           repository.fullName!,
           style: const TextStyle(
-            color: Colors.black,
+            // color: Colors.black,
             fontSize: 16,
           ),
         ),
@@ -85,7 +85,7 @@ class ListPage extends HookConsumerWidget {
             TextFormField(
               decoration: InputDecoration(
                 hintText: 'find directory',
-                fillColor: Colors.blue[100],
+                // fillColor: Colors.blue[100],
                 filled: true,
                 isDense: true,
                 prefixIcon: const Icon(Icons.search),
