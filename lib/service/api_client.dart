@@ -5,20 +5,28 @@ import 'package:http/http.dart' as http;
 
 
 final apiClientProvider = Provider.autoDispose(
-      (_) => GithubApiClient(),
+      (_) => GithubApiClientImpl(),
 );
 
 
-class GithubApiClient{
-  // factory コンストラクタは instanceを生成せず常にキャッシュを返す(singleton)
-  factory GithubApiClient() => _instance;
-  // クラス生成時に instance を生成する class コンストラクタ
-  GithubApiClient._internal();
-  // singleton にする為の instance キャッシュ
-  static final GithubApiClient _instance = GithubApiClient._internal();
-  // GithubAPIの基底Url
-  static const baseUrl = 'https://api.github.com';
 
+abstract class GithubApiClient {
+  Future<String> get(String endpoint);
+}
+
+class GithubApiClientImpl implements GithubApiClient{
+  // factory コンストラクタは instanceを生成せず常にキャッシュを返す(singleton)
+  factory GithubApiClientImpl({String baseUrl = 'https://api.github.com'}) {
+    return _instance ??= GithubApiClientImpl._internal(baseUrl);
+  }
+  // クラス生成時に instance を生成する class コンストラクタ
+  GithubApiClientImpl._internal(this.baseUrl);
+  // singleton にする為の instance キャッシュ
+  static GithubApiClientImpl? _instance;
+  // GithubAPIの基底Url
+  final String baseUrl;
+
+  @override
   Future<String> get (String endpoint)async{
     final url = '$baseUrl$endpoint';
     try{
