@@ -25,7 +25,7 @@ abstract class RepositoryEntity with _$RepositoryEntity {
 @freezed
 abstract class RepositoryOwnerEntity with _$RepositoryOwnerEntity {
   const factory RepositoryOwnerEntity({
-    @JsonKey(name: 'avatar_url') String? anatarUrl,
+    @JsonKey(name: 'avatar_url') String? avatarUrl,
   }) = _RepositoryOwnerEntity;
 
   factory RepositoryOwnerEntity.fromJson(Map<String, dynamic> json) =>

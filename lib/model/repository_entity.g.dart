@@ -36,11 +36,11 @@ Map<String, dynamic> _$$_RepositoryEntityToJson(_$_RepositoryEntity instance) =>
 _$_RepositoryOwnerEntity _$$_RepositoryOwnerEntityFromJson(
         Map<String, dynamic> json) =>
     _$_RepositoryOwnerEntity(
-      anatarUrl: json['avatar_url'] as String?,
+      avatarUrl: json['avatar_url'] as String?,
     );
 
 Map<String, dynamic> _$$_RepositoryOwnerEntityToJson(
         _$_RepositoryOwnerEntity instance) =>
     <String, dynamic>{
-      'avatar_url': instance.anatarUrl,
+      'avatar_url': instance.avatarUrl,
     };

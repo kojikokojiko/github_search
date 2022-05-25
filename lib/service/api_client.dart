@@ -11,7 +11,7 @@ final apiClientProvider = Provider.autoDispose(
 
 
 abstract class GithubApiClient {
-  Future<String> get(String endpoint);
+  Future<String>? get(String? endpoint);
 }
 
 class GithubApiClientImpl implements GithubApiClient{
@@ -27,7 +27,7 @@ class GithubApiClientImpl implements GithubApiClient{
   final String baseUrl;
 
   @override
-  Future<String> get (String endpoint)async{
+  Future<String>? get (String? endpoint)async{
     final url = '$baseUrl$endpoint';
     try{
       final response=await http.get(Uri.parse(url));

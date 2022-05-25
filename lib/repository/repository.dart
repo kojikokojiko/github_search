@@ -11,7 +11,7 @@ final githubRepositoryProvider = Provider((ref) => GithubRepositoryImpl(ref.read
 
 
 abstract class GithubRepository {
-  Future<List<RepositoryEntity>> searchRepositories(String searchKeyword);
+  Future<List<RepositoryEntity>> searchRepositories(String? searchKeyword);
 }
 
 
@@ -21,9 +21,9 @@ class GithubRepositoryImpl implements GithubRepository{
   final GithubApiClient _apiClient;
 
   @override
-  Future<List<RepositoryEntity>> searchRepositories(String searchKeyword)async{
+  Future<List<RepositoryEntity>> searchRepositories(String? searchKeyword)async{
     final responseBody=await _apiClient.get('/search/repositories?q=$searchKeyword&sort=stars&order=desc');
-    final decodedJson=json.decode(responseBody) as Map<String,dynamic>;
+    final decodedJson=json.decode(responseBody!) as Map<String,dynamic>;
     final repositoryList=<RepositoryEntity>[];
     if(decodedJson["total_count"] as int ==0){
       return repositoryList;
