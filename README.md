@@ -16,13 +16,7 @@ Githubのレポジトリを検索できるアプリです。
 * issuesの活用
 * プルリクエストの活用
 * Github-Flowに従った適切なブランチ運用
-*
-
-
-
-
-
-
+* 多言語化対応
 
 # Requirement
 
@@ -35,6 +29,8 @@ Githubのレポジトリを検索できるアプリです。
 * hooks_riverpod:
 * fluttertoast:
 * animated_text_kit:
+* intl:
+* flutter_localizations:
 
 ## dev_dependencies
 * flutter_lints:
