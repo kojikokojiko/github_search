@@ -21,10 +21,13 @@ class RepositoryPage extends StatelessWidget {
             // mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              Image.network(
-                repository!.owner!.avatarUrl!,
-                width: _screenSize.width*0.8,
-                // scale: 0.1,
+              Hero(
+                tag: "image"+repository!.name!,
+                child: Image.network(
+                  repository!.owner!.avatarUrl!,
+                  width: _screenSize.width*0.8,
+                  // scale: 0.1,
+                ),
               ),
               Text(
                 repository!.name!,

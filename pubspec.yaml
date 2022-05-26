@@ -40,6 +40,7 @@ dependencies:
   http:
   hooks_riverpod:
   fluttertoast:
+  animated_text_kit:
 
 dev_dependencies:
   flutter_test:
