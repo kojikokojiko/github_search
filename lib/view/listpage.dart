@@ -4,16 +4,17 @@ import 'package:github_search/view/repository_page.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../model/repository_entity.dart';
-
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class ListPage extends HookConsumerWidget {
   const ListPage({Key? key}) : super(key: key);
 
-  Widget _emptyListView() {
-    return const Center(
+  Widget _emptyListView(BuildContext context) {
+    return  Center(
       child: Text(
-        'Repositoryが見つかりませんでした',
+        AppLocalizations.of(context)!.notfound,
         style: TextStyle(
-          color: Colors.black54,
+
           fontSize: 16,
         ),
       ),
@@ -79,7 +80,7 @@ class ListPage extends HookConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Search Github"),
+        title: Text(AppLocalizations.of(context)!.title),
         // backgroundColor: ,
       ),
       body: Container(
@@ -88,7 +89,7 @@ class ListPage extends HookConsumerWidget {
           children: <Widget>[
             TextFormField(
               decoration: InputDecoration(
-                hintText: 'find directory',
+                hintText: AppLocalizations.of(context)!.search,
                 // fillColor: Colors.blue[100],
                 filled: true,
                 isDense: true,
@@ -113,7 +114,7 @@ class ListPage extends HookConsumerWidget {
                               context, repositoryList[index]);
                         },
                       )
-                    : _emptyListView(),
+                    : _emptyListView(context),
                 loading: _loadingView,
                 error: (error, _) => _errorView(error.toString()),
               ),
