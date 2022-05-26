@@ -2,10 +2,7 @@ import 'package:mock_web_server/mock_web_server.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:github_search/service/api_client.dart';
 
-
-
 import 'fixture.dart';
-
 
 void main() {
   late MockWebServer _server;

@@ -4,40 +4,41 @@ import 'package:github_search/view/repository_page.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../model/repository_entity.dart';
-
-
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class ListPage extends HookConsumerWidget {
   const ListPage({Key? key}) : super(key: key);
 
-
-  Widget _emptyListView() {
-    return const Center(
+  Widget _emptyListView(BuildContext context) {
+    return  Center(
       child: Text(
-        'Repositoryが見つかりませんでした',
+        AppLocalizations.of(context)!.notfound,
         style: TextStyle(
-          color: Colors.black54,
+
           fontSize: 16,
         ),
       ),
     );
   }
 
-  Widget _repositoryTile(BuildContext context,RepositoryEntity repository) {
+  Widget _repositoryTile(BuildContext context, RepositoryEntity repository) {
     return Container(
       decoration: const BoxDecoration(
         border: Border(bottom: BorderSide(width: 1, color: Colors.grey)),
       ),
       child: ListTile(
-        onTap: (){
-          Navigator.push(context, MaterialPageRoute(
-            // （2） 実際に表示するページ(ウィジェット)を指定する
-              builder: (context) => RepositoryPage(repository: repository,)
-          ));
-
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  // （2） 実際に表示するページ(ウィジェット)を指定する
+                  builder: (context) => RepositoryPage(
+                        repository: repository,
+                      )));
         },
         leading: Hero(
-            child: Image.network(repository.owner!.avatarUrl!),
-          tag: "image"+repository.name!,
+          child: Image.network(repository.owner!.avatarUrl!),
+          tag: "image" + repository.name!,
         ),
         title: Text(
           repository.fullName!,
@@ -71,6 +72,7 @@ class ListPage extends HookConsumerWidget {
     );
     return Container();
   }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(repositoryListViewModelProvider);
@@ -78,7 +80,7 @@ class ListPage extends HookConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Search Github"),
+        title: Text(AppLocalizations.of(context)!.title),
         // backgroundColor: ,
       ),
       body: Container(
@@ -87,7 +89,7 @@ class ListPage extends HookConsumerWidget {
           children: <Widget>[
             TextFormField(
               decoration: InputDecoration(
-                hintText: 'find directory',
+                hintText: AppLocalizations.of(context)!.search,
                 // fillColor: Colors.blue[100],
                 filled: true,
                 isDense: true,
@@ -97,35 +99,29 @@ class ListPage extends HookConsumerWidget {
                   borderSide: BorderSide.none,
                 ),
               ),
-              onFieldSubmitted: (searchKeyword){
+              onFieldSubmitted: (searchKeyword) {
                 controller.searchRepositories(searchKeyword);
-
-
               },
             ),
             Expanded(
               child: state.when(
-                data: (repositoryList) =>
-                repositoryList.isNotEmpty ? ListView.builder(
-                  padding: const EdgeInsets.all(16),
-                  itemCount: repositoryList.length,
-                  itemBuilder: (BuildContext context ,int index){
-                    return _repositoryTile(context,repositoryList[index]);
-                  },
-
-                ) : _emptyListView(),
-                loading:_loadingView,
-                error:(error,_)=>_errorView(error.toString()),
-
+                data: (repositoryList) => repositoryList.isNotEmpty
+                    ? ListView.builder(
+                        padding: const EdgeInsets.all(16),
+                        itemCount: repositoryList.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return _repositoryTile(
+                              context, repositoryList[index]);
+                        },
+                      )
+                    : _emptyListView(context),
+                loading: _loadingView,
+                error: (error, _) => _errorView(error.toString()),
               ),
             )
-
-
           ],
         ),
       ),
     );
   }
 }
-
-
