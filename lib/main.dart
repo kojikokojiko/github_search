@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:github_search/view/listpage.dart';
 
 import 'view/listpage.dart';
+
 void main() {
   runApp(ProviderScope(child: MyApp()));
 }
@@ -18,8 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.system,
-      home:ListPage(),
+      home: ListPage(),
     );
   }
 }
-

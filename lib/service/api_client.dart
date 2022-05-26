@@ -3,18 +3,15 @@ import 'dart:io';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
 
-
 final apiClientProvider = Provider.autoDispose(
-      (_) => GithubApiClientImpl(),
+  (_) => GithubApiClientImpl(),
 );
-
-
 
 abstract class GithubApiClient {
   Future<String>? get(String? endpoint);
 }
 
-class GithubApiClientImpl implements GithubApiClient{
+class GithubApiClientImpl implements GithubApiClient {
   // factory コンストラクタは instanceを生成せず常にキャッシュを返す(singleton)
   factory GithubApiClientImpl({String baseUrl = 'https://api.github.com'}) {
     return _instance ??= GithubApiClientImpl._internal(baseUrl);
@@ -27,15 +24,16 @@ class GithubApiClientImpl implements GithubApiClient{
   final String baseUrl;
 
   @override
-  Future<String>? get (String? endpoint)async{
+  Future<String>? get(String? endpoint) async {
     final url = '$baseUrl$endpoint';
-    try{
-      final response=await http.get(Uri.parse(url));
-      return _parseResponse(response.statusCode,response.body);
-    } on SocketException{
+    try {
+      final response = await http.get(Uri.parse(url));
+      return _parseResponse(response.statusCode, response.body);
+    } on SocketException {
       throw Exception("No Internet Connection");
     }
   }
+
   String _parseResponse(int httpStatus, String responseBody) {
     switch (httpStatus) {
       case 200:
