@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:github_search/repository/repository.dart';
@@ -29,10 +30,18 @@ class RepositoryPage extends StatelessWidget {
                   // scale: 0.1,
                 ),
               ),
-              Text(
-                repository!.name!,
+              DefaultTextStyle(
                 style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),
                 overflow: TextOverflow.ellipsis,
+                child: AnimatedTextKit(
+                  animatedTexts:[
+                    TypewriterAnimatedText(repository!.name!,speed: Duration(milliseconds: 150))
+                  ]
+
+                  // repository!.name!,
+                  // style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),
+                  // overflow: TextOverflow.ellipsis,
+                ),
               ),
               Align(
 
