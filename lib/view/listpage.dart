@@ -35,7 +35,10 @@ class ListPage extends HookConsumerWidget {
           ));
 
         },
-        leading: Image.network(repository.owner!.avatarUrl!),
+        leading: Hero(
+            child: Image.network(repository.owner!.avatarUrl!),
+          tag: "image"+repository.name!,
+        ),
         title: Text(
           repository.fullName!,
           style: const TextStyle(
