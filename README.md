@@ -22,7 +22,7 @@ Githubのレポジトリを検索できるアプリです。
 # Requirement
 
 ## dependencies
-* cupertino_icons: ^1.0.2
+* cupertino_icons:
 * json_annotation:
 * freezed_annotation:
 * flutter_riverpod:
@@ -32,10 +32,10 @@ Githubのレポジトリを検索できるアプリです。
 * animated_text_kit:
 
 ## dev_dependencies
-* flutter_lints: ^2.0.0
+* flutter_lints:
 * build_runner:
 * json_serializable:
 * freezed:
 * test:
 * mockito:
-* mock_web_server: ^5.0.0-nullsafety.1
+* mock_web_server: ^5.0.0-nullsafety.1（nullセーフティ非対応だったため）
