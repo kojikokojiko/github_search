@@ -368,7 +368,7 @@ RepositoryOwnerEntity _$RepositoryOwnerEntityFromJson(
 /// @nodoc
 mixin _$RepositoryOwnerEntity {
   @JsonKey(name: 'avatar_url')
-  String? get anatarUrl => throw _privateConstructorUsedError;
+  String? get avatarUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -381,7 +381,7 @@ abstract class $RepositoryOwnerEntityCopyWith<$Res> {
   factory $RepositoryOwnerEntityCopyWith(RepositoryOwnerEntity value,
           $Res Function(RepositoryOwnerEntity) then) =
       _$RepositoryOwnerEntityCopyWithImpl<$Res>;
-  $Res call({@JsonKey(name: 'avatar_url') String? anatarUrl});
+  $Res call({@JsonKey(name: 'avatar_url') String? avatarUrl});
 }
 
 /// @nodoc
@@ -395,12 +395,12 @@ class _$RepositoryOwnerEntityCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? anatarUrl = freezed,
+    Object? avatarUrl = freezed,
   }) {
     return _then(_value.copyWith(
-      anatarUrl: anatarUrl == freezed
-          ? _value.anatarUrl
-          : anatarUrl // ignore: cast_nullable_to_non_nullable
+      avatarUrl: avatarUrl == freezed
+          ? _value.avatarUrl
+          : avatarUrl // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -413,7 +413,7 @@ abstract class _$$_RepositoryOwnerEntityCopyWith<$Res>
           $Res Function(_$_RepositoryOwnerEntity) then) =
       __$$_RepositoryOwnerEntityCopyWithImpl<$Res>;
   @override
-  $Res call({@JsonKey(name: 'avatar_url') String? anatarUrl});
+  $Res call({@JsonKey(name: 'avatar_url') String? avatarUrl});
 }
 
 /// @nodoc
@@ -430,12 +430,12 @@ class __$$_RepositoryOwnerEntityCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? anatarUrl = freezed,
+    Object? avatarUrl = freezed,
   }) {
     return _then(_$_RepositoryOwnerEntity(
-      anatarUrl: anatarUrl == freezed
-          ? _value.anatarUrl
-          : anatarUrl // ignore: cast_nullable_to_non_nullable
+      avatarUrl: avatarUrl == freezed
+          ? _value.avatarUrl
+          : avatarUrl // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -446,18 +446,18 @@ class __$$_RepositoryOwnerEntityCopyWithImpl<$Res>
 class _$_RepositoryOwnerEntity
     with DiagnosticableTreeMixin
     implements _RepositoryOwnerEntity {
-  const _$_RepositoryOwnerEntity({@JsonKey(name: 'avatar_url') this.anatarUrl});
+  const _$_RepositoryOwnerEntity({@JsonKey(name: 'avatar_url') this.avatarUrl});
 
   factory _$_RepositoryOwnerEntity.fromJson(Map<String, dynamic> json) =>
       _$$_RepositoryOwnerEntityFromJson(json);
 
   @override
   @JsonKey(name: 'avatar_url')
-  final String? anatarUrl;
+  final String? avatarUrl;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RepositoryOwnerEntity(anatarUrl: $anatarUrl)';
+    return 'RepositoryOwnerEntity(avatarUrl: $avatarUrl)';
   }
 
   @override
@@ -465,7 +465,7 @@ class _$_RepositoryOwnerEntity
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'RepositoryOwnerEntity'))
-      ..add(DiagnosticsProperty('anatarUrl', anatarUrl));
+      ..add(DiagnosticsProperty('avatarUrl', avatarUrl));
   }
 
   @override
@@ -473,13 +473,13 @@ class _$_RepositoryOwnerEntity
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RepositoryOwnerEntity &&
-            const DeepCollectionEquality().equals(other.anatarUrl, anatarUrl));
+            const DeepCollectionEquality().equals(other.avatarUrl, avatarUrl));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(anatarUrl));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(avatarUrl));
 
   @JsonKey(ignore: true)
   @override
@@ -495,7 +495,7 @@ class _$_RepositoryOwnerEntity
 
 abstract class _RepositoryOwnerEntity implements RepositoryOwnerEntity {
   const factory _RepositoryOwnerEntity(
-          {@JsonKey(name: 'avatar_url') final String? anatarUrl}) =
+          {@JsonKey(name: 'avatar_url') final String? avatarUrl}) =
       _$_RepositoryOwnerEntity;
 
   factory _RepositoryOwnerEntity.fromJson(Map<String, dynamic> json) =
@@ -503,7 +503,7 @@ abstract class _RepositoryOwnerEntity implements RepositoryOwnerEntity {
 
   @override
   @JsonKey(name: 'avatar_url')
-  String? get anatarUrl => throw _privateConstructorUsedError;
+  String? get avatarUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_RepositoryOwnerEntityCopyWith<_$_RepositoryOwnerEntity> get copyWith =>

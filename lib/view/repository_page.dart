@@ -22,7 +22,7 @@ class RepositoryPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Image.network(
-                repository!.owner!.anatarUrl!,
+                repository!.owner!.avatarUrl!,
                 width: _screenSize.width*0.8,
                 // scale: 0.1,
               ),
