@@ -5,8 +5,16 @@ import 'package:github_search/service/api_client.dart';
 
 import 'package:github_search/model/repository_entity.dart';
 
+
+
+
+
 final githubRepositoryProvider =
     Provider((ref) => GithubRepositoryImpl(ref.read(apiClientProvider)));
+
+
+
+
 
 abstract class GithubRepository {
   Future<List<RepositoryEntity>> searchRepositories(String? searchKeyword);

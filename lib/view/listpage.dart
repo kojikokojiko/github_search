@@ -9,6 +9,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class ListPage extends HookConsumerWidget {
   const ListPage({Key? key}) : super(key: key);
 
+  // レポジトリリストが空の時のWidget
   Widget _emptyListView(BuildContext context) {
     return  Center(
       child: Text(
@@ -21,6 +22,7 @@ class ListPage extends HookConsumerWidget {
     );
   }
 
+  // ListTileのwidget
   Widget _repositoryTile(BuildContext context, RepositoryEntity repository) {
     return Container(
       decoration: const BoxDecoration(
@@ -31,7 +33,6 @@ class ListPage extends HookConsumerWidget {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  // （2） 実際に表示するページ(ウィジェット)を指定する
                   builder: (context) => RepositoryPage(
                         repository: repository,
                       )));
